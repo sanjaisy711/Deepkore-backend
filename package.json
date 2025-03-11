@@ -1,0 +1,66 @@
+{
+  "name": "dzitra",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "rimraf ./build && tsc",
+    "linuxstart": "npm run build && NODE_ENV=dev node build/index.js",
+    "windowsstart": "npm run build && SET \"NODE_ENV=dev\" && node build/index.js",
+    "windowslocalstart": "npm run build && SET \"NODE_ENV=devLocal\" && node build/index.js",
+    "start": "npm run build && NODE_ENV=devLocal node build/index.js",
+    "dev:local": "SET \"NODE_ENV=devLocal\" && nodemon",
+    "dev": "SET \"NODE_ENV=dev\" && nodemon",
+    "eslint": "eslint --ext ts src",
+    "eslint:fix": "eslint --ext ts src --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/manoj-node/dzitra.git"
+  },
+  "author": "Manoj",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/manoj-node/dzitra/issues"
+  },
+  "homepage": "https://github.com/manoj-node/dzitra#readme",
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "config": "^3.3.9",
+    "connect-flash": "^0.1.1",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "express-session": "^1.17.3",
+    "express-validator": "^6.14.2",
+    "jsonwebtoken": "^9.0.0",
+    "mongodb": "^4.13.0",
+    "nodemailer": "^6.9.16",
+    "nodemon": "^3.1.7",
+    "passport": "^0.6.0",
+    "passport-local": "^1.0.0",
+    "ts-node": "^10.9.2"
+  },
+  "devDependencies": {
+    "@types/bcrypt": "^5.0.0",
+    "@types/config": "^3.3.0",
+    "@types/connect-flash": "^0.0.37",
+    "@types/cors": "^2.8.13",
+    "@types/express-session": "^1.17.5",
+    "@types/jsonwebtoken": "^9.0.1",
+    "@types/lodash": "^4.14.191",
+    "@types/node": "^18.11.18",
+    "@types/nodemailer": "^6.4.7",
+    "@types/passport": "^1.0.11",
+    "@types/passport-local": "^1.0.35",
+    "@typescript-eslint/eslint-plugin": "^5.48.2",
+    "eslint": "^8.32.0",
+    "eslint-config-prettier": "^8.6.0",
+    "eslint-config-standard-with-typescript": "^31.0.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-n": "^15.6.1",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-promise": "^6.1.1",
+    "prettier": "^2.8.3",
+    "typescript": "^4.9.4"
+  }
+}

@@ -1,0 +1,5 @@
+#node ignore
+node_modules
+
+#ignore build
+build

@@ -1,0 +1,29 @@
+{
+    "ENV": {
+        "FE_HOST": "localhost",
+        "FE_PORT": 3001,
+        "HOST": "localhost",
+        "PORT": 3001,
+        "DB_URL": "mongodb://localhost:27017",
+        "DB": "worksbyte",
+        "DB_POOL_SIZE": 100,
+        "maxTimeMS": 5000,
+        "MAX_SIZE": "100mb",
+        "MAX_PARAM": 100,
+        "REQ_TIMEOUT": 5000,
+        "SESSION_SECRET": "DzitraGtwaySSN",
+        "SESSION_NAME": "DzitraSSN",
+        "SESSION_EXPIRES": 86400000,
+        "ADMIN_SECRET_KEY": "dzitrausersigin",
+        "ADMIN_JWT_EXPIRES": "10h",
+        "ADMIN_PASSLINK_EXPIRE": 600,
+        "CUSTOMER_SECRET_KEY": "dzitracustomersigin",
+        "CUSTOMER_JWT_EXPIRES": "10h",
+        "LEAD_INVITE_EXPIRE": 600,
+        "CAP_SECRET_KEY": "dzitracustomerapsigin",
+        "CAP_JWT_EXPIRES": "10h",
+        "EMAIL": "superadmin@mail.in",
+        "CRYPTO_ALGO": "aes-256-ctr",
+        "CRYPTO_SECRET": "rLve7lAIsGBIdmjK2OG2unBgAwUbDW7U"
+    }
+}
