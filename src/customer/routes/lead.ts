@@ -126,7 +126,7 @@ try {
       body('company_name', 'Company Name is required').not().isEmpty(),
       body('plan', 'Plan is required').not().isEmpty(),
     ],
-    async (req: Request, res: Response) => {
+    async (req: Request, res: Response): Promise<void> => {
       try {
         console.log('plan endpoint hit');
         const result = await plans(req);
@@ -153,19 +153,19 @@ try {
             mailDetails.text
           );
           if (emailResult.success) {
-            return res.status(result.code).json(result.response);
+            res.status(result.code).json(result.response);
           } else {
             console.error('Failed to send email:', emailResult.error);
-            return res
+            res
               .status(statusCode.InternalServer)
               .json({ status: 0, message: 'Email failed to send.' });
           }
         } else {
-          return res.status(result.code).json(result.response);
+          res.status(result.code).json(result.response);
         }
       } catch (err) {
         console.error('Error in plans endpoint:', err);
-        return res
+        res
           .status(statusCode.InternalServer)
           .json({ status: 0, message: handleCatchError(err) });
       }
@@ -181,7 +181,7 @@ try {
         .not()
         .isEmpty(),
     ],
-    async (req: Request, res: Response) => {
+    async (req: Request, res: Response): Promise<void> => {
       try {
         // Schedule demo logic
         const result = await scheduleDemo(req);
@@ -204,19 +204,19 @@ try {
           );
 
           if (emailResult.success) {
-            return res.status(result.code).json(result.response); // Success response
+            res.status(result.code).json(result.response); // Success response
           } else {
             console.error('Failed to send email:', emailResult.error);
-            return res
+            res
               .status(statusCode.InternalServer)
               .json({ status: 0, message: 'Email failed to send.' });
           }
         } else {
-          return res.status(result.code).json(result.response); // Validation error
+          res.status(result.code).json(result.response); // Validation error
         }
       } catch (err) {
         console.error('Error in scheduling demo:', err);
-        return res
+        res
           .status(statusCode.InternalServer)
           .json({ status: 0, message: 'An unexpected error occurred.' });
       }
@@ -243,7 +243,7 @@ try {
         .not()
         .isEmpty(),
     ],
-    async (req: Request, res: Response) => {
+    async (req: Request, res: Response): Promise<void> => {
       try {
         // Handle the 'contactUs' logic
         const result = await contactUs(req);
@@ -272,19 +272,19 @@ try {
           );
           console.log(emailResult.success);
           if (emailResult.success) {
-            return res.status(result.code).json(result.response);
+            res.status(result.code).json(result.response);
           } else {
             console.error('Failed to send email:', emailResult.error);
-            return res
+            res
               .status(statusCode.InternalServer)
               .json({ status: 0, message: 'Email failed to send.' });
           }
         } else {
-          return res.status(result.code).json(result.response);
+          res.status(result.code).json(result.response);
         }
       } catch (err) {
         console.error('Error in contact us:', err);
-        return res
+        res
           .status(statusCode.InternalServer)
           .json({ status: 0, message: handleCatchError(err) });
       }

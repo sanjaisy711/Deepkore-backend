@@ -7,14 +7,14 @@ export const gmailTransporter = nodemailer.createTransport({
   secure: true,
   auth: {
     user: 'dgiverse.tech@gmail.com',
-    pass: 'zzqo xgof vmun jxsw',
+    pass: 'kygo wxtt yfjr ldka',
   },
 });
 
 export const mailDetails = {
   from: 'dgiverse.tech@gmail.com',
-  // to: 'kris@worksbyte.com,muru@worksbyte.com,gopal@worksbyte.com',
-  to: 'sanjai@worksbyte.com',
+  to: 'kris@worksbyte.com,muru@worksbyte.com,sanjai@worksbyte.com',
+  // to: 'sanjai@worksbyte.com',
   subject: 'New Lead',
   text: `Hi,
 
@@ -29,8 +29,8 @@ export const mailDetails = {
 export const sendEmail = async (subject: string, text: string) => {
   const mailDetails = {
     from: 'dgiverse.tech@gmail.com',
-    // to: 'kris@worksbyte.com,muru@worksbyte.com,gopal@worksbyte.com',
-    to: 'sanjai@worksbyte.com',
+    to: 'kris@worksbyte.com,muru@worksbyte.com,sanjai@worksbyte.com',
+    // to: 'sanjai@worksbyte.com',
     subject,
     text,
   };

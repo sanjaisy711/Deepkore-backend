@@ -32,8 +32,12 @@ export const jwtSigninToken = (
   secret: string,
   expiry: string | number
 ): string => {
+  if (typeof expiry === 'number') {
+    expiry = `${expiry}s`; // Convert numeric expiry to string format (e.g., "3600s")
+  }
+
   return sign(payload, secret, {
-    expiresIn: expiry,
+    expiresIn: expiry as string, // Ensure it's always a valid string
   });
 };
 
