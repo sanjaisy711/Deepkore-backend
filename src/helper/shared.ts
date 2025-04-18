@@ -1,7 +1,7 @@
 import { ObjectId } from 'mongodb';
 import bcrypt from 'bcrypt';
 import { AuthUserToken } from '../types/responseType';
-import { sign } from 'jsonwebtoken';
+import { sign, SignOptions } from 'jsonwebtoken';
 import { Msg, Status } from '../types/internalType';
 import { CollectionName, UpdateMany } from '../types/mongoType';
 import { UpdateManyDocument } from '../connector/mongodb';
@@ -32,13 +32,12 @@ export const jwtSigninToken = (
   secret: string,
   expiry: string | number
 ): string => {
-  if (typeof expiry === 'number') {
-    expiry = `${expiry}s`; // Convert numeric expiry to string format (e.g., "3600s")
-  }
+  const expiresIn: number | SignOptions['expiresIn'] =
+    typeof expiry === 'number' ? expiry : (expiry as SignOptions['expiresIn']);
 
-  return sign(payload, secret, {
-    expiresIn: expiry as string, // Ensure it's always a valid string
-  });
+  const signOptions: SignOptions = { expiresIn };
+
+  return sign(payload, secret, signOptions);
 };
 
 export const getMatchStatus = (status: string): number[] => {

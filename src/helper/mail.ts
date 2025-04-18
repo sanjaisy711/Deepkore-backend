@@ -13,7 +13,7 @@ export const gmailTransporter = nodemailer.createTransport({
 
 export const mailDetails = {
   from: 'dgiverse.tech@gmail.com',
-  to: 'kris@worksbyte.com,muru@worksbyte.com,sanjai@worksbyte.com',
+  to: 'kris@deepkore.com,muru@deepkore.com,sanjai@deepkore.com,contact@deepkore.com',
   // to: 'sanjai@worksbyte.com',
   subject: 'New Lead',
   text: `Hi,
@@ -29,7 +29,7 @@ export const mailDetails = {
 export const sendEmail = async (subject: string, text: string) => {
   const mailDetails = {
     from: 'dgiverse.tech@gmail.com',
-    to: 'kris@worksbyte.com,muru@worksbyte.com,sanjai@worksbyte.com',
+    to: 'kris@deepkore.com,muru@deepkore.com,sanjai@deepkore.com,contact@deepkore.com',
     // to: 'sanjai@worksbyte.com',
     subject,
     text,
